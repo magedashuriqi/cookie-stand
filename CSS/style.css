@@ -1,0 +1,7 @@
+td, tr:last-child th{
+border: 1px solid black;
+
+}
+ table,tr:last-child{
+    border-collapse: collapse;
+ }
