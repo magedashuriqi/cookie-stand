@@ -5,3 +5,8 @@ border: 1px solid black;
  table,tr:last-child{
     border-collapse: collapse;
  }
+ 
+ body{
+    
+    background-color: #e6e6e6;
+ }
