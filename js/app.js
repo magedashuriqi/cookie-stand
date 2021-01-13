@@ -21,7 +21,7 @@ this.customerPerHour=[];
 this.cookiesPurchased=[];
 this.totalCookiesPerDay=0; 
 allLocations.push(this); 
-}
+} 
 //--------------------------------------
 //Salmon cookies prototype functions
 
