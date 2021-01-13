@@ -45,6 +45,10 @@ h3{
    color:#532e1c ;
 }
 
+main{
+   height: 1000px;
+}
+
 #greeting,#greeting-branches{
    color:#532e1c ;
    font-size: 24px;
@@ -56,9 +60,9 @@ footer{
    background-color: #c5a880;
    height: 180px;
    width: 1800;
-   margin-bottom: 0px;
+   scroll-margin-bottom: -50px;
    position: relative;
-   top: 0px;
+   top: 100px;
    bottom: 1000px;
    color:#3a2216;
    font-size: 16px;
@@ -68,19 +72,45 @@ footer{
 /*moving images*/
 #img5{
    position: relative;
-   left: 600px;
-   bottom: 190px;
+   left: 0px;
+   bottom: 0px;
    height: 140px;
    width: 400px;
 }
 
 #img1,#img2,#img3,#img4{
-   padding: 20px;
-   margin: 20px;
+   position: relative;
+   bottom:1000;
 }
 
+form{
+   background-color: #532e1c;
+   color: #dfc9ab;
+   padding: 10px;
+  
+   border-radius: 10px;
+   width: 350px;  
+}
+.form-list{
+padding: 10px;
+}
 
+ button{
+    background-color: #dfc9ab;
+    color: #532e1c;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font: bolder;
+    position: relative;
+    left: 50px;
+    bottom: 30px;
+ }
 
+ .greeting-div{
+    position: relative;
+    left: 450px;
+    bottom:410px;
+ }
 
 /*sales file*/
 
