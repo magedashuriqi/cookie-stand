@@ -9,6 +9,7 @@ var totalCookiesTotalLocation=[];
 for (let i = 0; i < hourArray.length; i++) {
     totalCookiesTotalLocation.push(0);   
 }
+var grandTotal= 0;
 //----------------------------------------------------------
 function SalmonCookies (locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust){
 this.locationName= locationName; 
@@ -31,6 +32,8 @@ allLocations.push(this);
      /*console.log(hourArray[hour]+ this.cookiesPurchased[hour])*/;}
     for (let index = 0; index < this.cookiesPurchased.length; index++) {
        this.totalCookiesPerDay += this.cookiesPurchased[index];}
+     grandTotal += this.totalCookiesPerDay
+    console.log(grandTotal);
     };
 //----------------------------------
 createTable();
@@ -146,6 +149,9 @@ for (let i = 0; i < hourArray.length; i++) {
     totalElements=document.createElement('th');
     totalElements.textContent=totalCookiesTotalLocation[i];
     //console.log(totalElements);
-    totalRow.appendChild(totalElements);
-    
+    totalRow.appendChild(totalElements);   
 }
+var grandCell;
+grandCell=document.createElement('td');
+grandCell.textContent =grandTotal;
+totalRow.appendChild(grandCell);
