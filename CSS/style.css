@@ -47,6 +47,8 @@ h3{
 
 main{
    height: 1000px;
+   position: relative;
+   left: 150px;
 }
 
 #greeting,#greeting-branches{
@@ -72,8 +74,8 @@ footer{
 /*moving images*/
 #img5{
    position: relative;
-   left: 0px;
-   bottom: 0px;
+   left: 420px;
+   bottom: -160px;
    height: 140px;
    width: 400px;
 }
@@ -87,7 +89,7 @@ form{
    background-color: #532e1c;
    color: #dfc9ab;
    padding: 10px;
-  
+  height: 400px;
    border-radius: 10px;
    width: 350px;  
 }
@@ -116,6 +118,9 @@ padding: 10px;
 
  h2{
     color: #532e1c;
+    position: relative;
+    left:400px;
+    bottom: 250px;
  }
 
  td,tr,th{
@@ -126,9 +131,11 @@ padding: 10px;
 tr,table{
    color: #c5a880;
    border-collapse: collapse;
+   border-radius: 20px;
    size: 50px;
    position: relative;
-   left: 120px;
+  left:410px;
+  bottom: 250px;
    margin-bottom: 20px;
 }
 
