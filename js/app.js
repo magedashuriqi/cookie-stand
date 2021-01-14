@@ -10,6 +10,7 @@ for (let i = 0; i < hourArray.length; i++) {
     totalCookiesTotalLocation.push(0);   
 }
 var grandTotal= 0;
+
 //----------------------------------------------------------
 function SalmonCookies (locationName, minCustPerHour, maxCustPerHour, avgCookiesPerCust){
 this.locationName= locationName; 
@@ -20,7 +21,7 @@ this.customerPerHour=[];
 this.cookiesPurchased=[];
 this.totalCookiesPerDay=0; 
 allLocations.push(this); 
-}
+} 
 //--------------------------------------
 //Salmon cookies prototype functions
 
@@ -31,10 +32,14 @@ allLocations.push(this);
     this.cookiesPurchased.push(Math.floor(this.customerPerHour[hour]*this.avgCookiesPerCust+1));
      /*console.log(hourArray[hour]+ this.cookiesPurchased[hour])*/;}
     for (let index = 0; index < this.cookiesPurchased.length; index++) {
-       this.totalCookiesPerDay += this.cookiesPurchased[index];}
-     grandTotal += this.totalCookiesPerDay
+
+       this.totalCookiesPerDay += this.cookiesPurchased[index];  
+    }
+    grandTotal += this.totalCookiesPerDay;
     console.log(grandTotal);
-    };
+
+}
+
 //----------------------------------
 createTable();
 createHoursRow();
@@ -64,17 +69,7 @@ createHoursRow();
         tableRows.appendChild(totalDaily);
          
      }
-      
-
- 
-       
-         
-     
- 
-             
-         
-        
-
+    
         console.log(document);
          
 
@@ -100,6 +95,7 @@ createHoursRow();
         function createTable(){
         var parentDiv=document.getElementById('cookies sallary');
         tableOfSales=document.createElement('table');
+        tableOfSales.setAttribute("id","table1") 
         parentDiv.appendChild(tableOfSales);  
         }
         
@@ -128,30 +124,84 @@ createHoursRow();
         tableOfSales.appendChild(totalRow);
     }
 
-   
-    
-
-
 //---------------------------------------
 
-seattle.cookiesPerHour();
-tokyo.cookiesPerHour();
-dubai.cookiesPerHour();
-paris.cookiesPerHour();
-lima.cookiesPerHour();
-seattle.render();
-tokyo.render();
-dubai.render();
-paris.render();
-lima.render();
-createFooter();  
+
+for (let i = 0; i < allLocations.length; i++) {
+    allLocations[i].cookiesPerHour();
+    allLocations[i].render(); }
+
+
+createFooter(); 
 for (let i = 0; i < hourArray.length; i++) {
-    totalElements=document.createElement('th');
-    totalElements.textContent=totalCookiesTotalLocation[i];
-    //console.log(totalElements);
-    totalRow.appendChild(totalElements);   
+
+totalElements=document.createElement('th');
+totalElements.textContent=totalCookiesTotalLocation[i];
+//console.log(totalElements);
+totalRow.appendChild(totalElements);
+ }
+
+
+
 }
+
 var grandCell;
 grandCell=document.createElement('td');
 grandCell.textContent =grandTotal;
 totalRow.appendChild(grandCell);
+
+
+
+
+
+ var patCookies = document.getElementById('patCookies');
+    patCookies.addEventListener('submit',submitter);
+
+    function submitter(event){
+        event.preventDefault();
+        console.log(event);   
+
+        var nameOfBranch = event.target.names.value
+        console.log('Location name:',nameOfBranch);
+
+        var minimumCustomer=event.target.mincust.value;
+        console.log('Min. number of customer =',minimumCustomer);
+
+        var maximumCustomer=event.target.maxcust.value;
+        console.log('Max. number of customer =',maximumCustomer);
+
+        var avgCookiesPerCustomer=event.target.avgCookies.value;
+        console.log('Avg. cookies per customer =',avgCookiesPerCustomer);
+
+       var newBranch= new SalmonCookies(nameOfBranch,minimumCustomer,maximumCustomer,avgCookiesPerCustomer);
+       console.log(newBranch);
+
+      
+      
+       newBranch.cookiesPerHour();
+       newBranch.render();
+
+       document.getElementById('table1').deleteRow(allLocations.length);
+       createFooter(); 
+      for (let i = 0; i < hourArray.length; i++) {
+totalElements=document.createElement('th');
+totalElements.textContent=totalCookiesTotalLocation[i];
+//console.log(totalElements);
+totalRow.appendChild(totalElements);
+ }
+
+
+var grandCell;
+grandCell=document.createElement('td');
+grandCell.textContent =grandTotal;
+totalRow.appendChild(grandCell);
+
+
+         
+
+    }
+  
+
+   
+
+
