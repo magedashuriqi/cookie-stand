@@ -143,7 +143,7 @@ totalRow.appendChild(totalElements);
 
 
 
-}
+
 
 var grandCell;
 grandCell=document.createElement('td');
@@ -192,7 +192,7 @@ totalRow.appendChild(totalElements);
 
 
 var grandCell;
-grandCell=document.createElement('td');
+grandCell=document.createElement('th');
 grandCell.textContent =grandTotal;
 totalRow.appendChild(grandCell);
 
