@@ -81,7 +81,7 @@ createHoursRow();
         var dubai = new SalmonCookies('Dubai',11,38,3.7);
         var paris = new SalmonCookies('Paris',3,24,1.2);
         var lima = new SalmonCookies('Lima',3,24,1.2);
-        
+        console.log(SalmonCookies);
         //----------------------------------------------
         //global functions:
         var hoursOfWork;
@@ -152,14 +152,14 @@ totalRow.appendChild(grandCell);
 
 
 
-
-
+   
  var patCookies = document.getElementById('patCookies');
     patCookies.addEventListener('submit',submitter);
 
     function submitter(event){
         event.preventDefault();
-        console.log(event);   
+        console.log(event);  
+          
 
         var nameOfBranch = event.target.names.value
         console.log('Location name:',nameOfBranch);
@@ -172,7 +172,9 @@ totalRow.appendChild(grandCell);
 
         var avgCookiesPerCustomer=event.target.avgCookies.value;
         console.log('Avg. cookies per customer =',avgCookiesPerCustomer);
-
+        if (minimumCustomer > maximumCustomer) {
+            alert('the minimum number of Customer should be greater than the maximum! ') 
+        } else{ 
        var newBranch= new SalmonCookies(nameOfBranch,minimumCustomer,maximumCustomer,avgCookiesPerCustomer);
        console.log(newBranch);
 
@@ -184,24 +186,18 @@ totalRow.appendChild(grandCell);
        document.getElementById('table1').deleteRow(allLocations.length);
        createFooter(); 
       for (let i = 0; i < hourArray.length; i++) {
-totalElements=document.createElement('th');
-totalElements.textContent=totalCookiesTotalLocation[i];
-//console.log(totalElements);
-totalRow.appendChild(totalElements);
- }
-
+      totalElements=document.createElement('th');
+      totalElements.textContent=totalCookiesTotalLocation[i];
+      //console.log(totalElements);
+       totalRow.appendChild(totalElements);    }
+        
+    
 
 var grandCell;
 grandCell=document.createElement('th');
 grandCell.textContent =grandTotal;
-totalRow.appendChild(grandCell);
+totalRow.appendChild(grandCell);}
 
-
-         
-
-    }
-  
-
-   
-
+    
+      }
 
